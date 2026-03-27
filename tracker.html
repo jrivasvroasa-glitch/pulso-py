@@ -39,7 +39,6 @@ body {
   padding: 24px 16px 40px;
   gap: 16px;
 }
-
 .header {
   width: 100%;
   display: flex;
@@ -58,7 +57,6 @@ body {
 .logo-mark svg { width: 16px; height: 16px; }
 .logo-text { font-family: var(--mono); font-size: .95rem; font-weight: 600; }
 .logo-sub { font-size: .65rem; color: var(--text3); margin-left: auto; font-family: var(--mono); letter-spacing: .5px; }
-
 .status-card {
   width: 100%;
   background: var(--bg2);
@@ -69,7 +67,6 @@ body {
   flex-direction: column;
   gap: 12px;
 }
-
 .status-row {
   display: flex;
   align-items: center;
@@ -77,7 +74,6 @@ body {
   flex-wrap: wrap;
   gap: 8px;
 }
-
 .status-indicator {
   display: flex;
   align-items: center;
@@ -93,7 +89,6 @@ body {
 .status-dot.active { background: var(--accent); animation: blink 1.4s ease-in-out infinite; }
 .status-dot.error { background: var(--red); }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.25} }
-
 .cam-label {
   font-family: var(--mono);
   font-size: .7rem;
@@ -104,13 +99,11 @@ body {
   border-radius: 3px;
 }
 .cam-label b { color: var(--accent); }
-
 .gps-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 8px;
 }
-
 .gps-item {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -130,7 +123,6 @@ body {
   letter-spacing: .7px;
   margin-top: 3px;
 }
-
 .coords-display {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -143,14 +135,12 @@ body {
   line-height: 1.6;
 }
 .coords-display span { color: var(--accent); }
-
 .last-sync {
   font-family: var(--mono);
   font-size: .65rem;
   color: var(--text3);
   text-align: center;
 }
-
 .config-card {
   width: 100%;
   background: var(--bg2);
@@ -169,7 +159,6 @@ body {
   letter-spacing: 1px;
   color: var(--text3);
 }
-
 .field { display: flex; flex-direction: column; gap: 5px; }
 .field label {
   font-size: .7rem;
@@ -190,11 +179,8 @@ body {
   outline: none;
   width: 100%;
 }
-.field input:focus, .field select:focus {
-  border-color: var(--accent);
-}
+.field input:focus, .field select:focus { border-color: var(--accent); }
 .field select option { background: var(--bg2); }
-
 .btn-start {
   width: 100%;
   padding: 15px;
@@ -210,19 +196,11 @@ body {
   justify-content: center;
   gap: 10px;
 }
-.btn-start.start {
-  background: var(--accent);
-  color: #0d0f0d;
-}
+.btn-start.start { background: var(--accent); color: #0d0f0d; }
 .btn-start.start:hover { background: #2ab86a; }
-.btn-start.stop {
-  background: rgba(232,80,80,.15);
-  border: 1px solid var(--red);
-  color: var(--red);
-}
+.btn-start.stop { background: rgba(232,80,80,.15); border: 1px solid var(--red); color: var(--red); }
 .btn-start.stop:hover { background: rgba(232,80,80,.25); }
 .btn-start svg { width: 18px; height: 18px; }
-
 .log-card {
   width: 100%;
   background: var(--bg2);
@@ -259,12 +237,10 @@ body {
 .log-entry.ok .log-msg { color: var(--accent); }
 .log-entry.err .log-msg { color: var(--red); }
 .log-entry.warn .log-msg { color: var(--amber); }
-
 .acc-bar-wrap { display: flex; align-items: center; gap: 8px; }
 .acc-bar-track { flex: 1; height: 4px; background: var(--surface); border-radius: 2px; overflow: hidden; }
 .acc-bar-fill { height: 100%; border-radius: 2px; transition: width .5s, background .5s; }
 .acc-label { font-family: var(--mono); font-size: .65rem; color: var(--text3); white-space: nowrap; }
-
 .conn-pill {
   display: inline-flex;
   align-items: center;
@@ -285,7 +261,6 @@ body {
   color: var(--accent);
 }
 .conn-dot { width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
-
 .tip-banner {
   position: fixed;
   bottom: 20px;
@@ -308,7 +283,6 @@ body {
   from { transform: translateY(100%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
 .offline-badge {
   background: var(--amber);
   color: #0d0f0d;
@@ -338,7 +312,6 @@ body {
     </div>
     <div class="cam-label">ID: <b id="camIdDisplay">—</b></div>
   </div>
-
   <div class="gps-grid">
     <div class="gps-item">
       <div class="gps-val" id="valVel">0</div>
@@ -357,18 +330,13 @@ body {
       <div class="gps-lbl">Longitud</div>
     </div>
   </div>
-
   <div>
     <div class="acc-bar-wrap">
       <div class="acc-bar-track"><div class="acc-bar-fill" id="accFill" style="width:0%;background:var(--text3)"></div></div>
       <div class="acc-label" id="accLabel">Sin señal</div>
     </div>
   </div>
-
-  <div class="coords-display" id="coordsDisplay">
-    Esperando GPS...
-  </div>
-
+  <div class="coords-display" id="coordsDisplay">Esperando GPS...</div>
   <div class="last-sync" id="lastSync">Última sincronización: —</div>
   <div class="last-sync" id="queueStatus" style="color: var(--amber);"></div>
 </div>
@@ -420,9 +388,6 @@ body {
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════════════
-// CONFIGURACIÓN FIREBASE - COMPLETAR CON TUS DATOS
-// ═══════════════════════════════════════════════════════════════
 const FIREBASE_CONFIG = {
   apiKey:            "AIzaSyCapHuZbZxXvWxKmBEoHgndqkPyAHZpeW8",
   authDomain:        "pulso-py.firebaseapp.com",
@@ -432,22 +397,24 @@ const FIREBASE_CONFIG = {
   messagingSenderId: "680696841015",
   appId:             "1:680696841015:web:6c39a93729bdf13d3910b2"
 };
-// ═══════════════════════════════════════════════════════════════
 
 let db = null;
 let firebaseOk = false;
 let tracking = false;
 let watchId = null;
 let sendTimer = null;
+let forceGpsTimer = null;
+let watchdogTimer = null;
 let lastPos = null;
 let sendCount = 0;
 let wakeLock = null;
 let offlineQueue = [];
 let retryCount = 0;
 let lastSuccessfulSend = null;
+let lastGpsUpdate = null;
 let keepAliveInterval = null;
+let noSleepVideo = null;
 
-// Elementos DOM
 const elements = {
   fbPill: document.getElementById('fbPill'),
   connLabel: document.getElementById('connLabel'),
@@ -473,12 +440,10 @@ const elements = {
   logCounter: document.getElementById('logCounter')
 };
 
-// Cargar Firebase
 async function initFirebase() {
   try {
     const { initializeApp } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js");
     const { getDatabase, ref, set, push, serverTimestamp, onDisconnect } = await import("https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js");
-    
     const app = initializeApp(FIREBASE_CONFIG);
     db = getDatabase(app);
     window.dbRef = ref;
@@ -486,7 +451,6 @@ async function initFirebase() {
     window.dbPush = push;
     window.dbServerTimestamp = serverTimestamp;
     window.dbOnDisconnect = onDisconnect;
-    
     firebaseOk = true;
     elements.fbPill.classList.add('ok');
     elements.connLabel.textContent = 'FIREBASE OK';
@@ -506,10 +470,8 @@ function addLog(msg, type = '') {
   entry.className = `log-entry ${type}`;
   entry.innerHTML = `<span class="log-time">${time}</span><span class="log-msg">${msg}</span>`;
   container.insertBefore(entry, container.firstChild);
-  
   let logCount = parseInt(elements.logCounter.textContent) + 1;
   elements.logCounter.textContent = logCount;
-  
   while (container.children.length > 50) container.removeChild(container.lastChild);
 }
 
@@ -539,66 +501,74 @@ async function requestWakeLock() {
   if ('wakeLock' in navigator && !wakeLock) {
     try {
       wakeLock = await navigator.wakeLock.request('screen');
-      addLog('💡 Pantalla mantenida activa', 'ok');
+      addLog('💡 WakeLock activo', 'ok');
       wakeLock.addEventListener('release', () => {
         wakeLock = null;
+        if (tracking) setTimeout(() => requestWakeLock(), 1000);
       });
     } catch(e) {
-      addLog('⚠️ WakeLock no disponible', 'warn');
+      addLog('⚠️ WakeLock: ' + e.message, 'warn');
     }
+  }
+  startNoSleepVideo();
+}
+
+function startNoSleepVideo() {
+  if (noSleepVideo) return;
+  try {
+    noSleepVideo = document.createElement('video');
+    noSleepVideo.setAttribute('playsinline', '');
+    noSleepVideo.setAttribute('muted', '');
+    noSleepVideo.setAttribute('loop', '');
+    noSleepVideo.style.cssText = 'position:fixed;width:1px;height:1px;opacity:0.01;top:0;left:0;pointer-events:none;';
+    const src = 'data:video/mp4;base64,AAAAIGZ0eXBpc29tAAACAGlzb21pc28ybXA0MWF2YzEAAAAIZnJlZQAAAs1tZGF0AAACrgYF//+q3EXpvebZSLeWLNgg2SPu73gyNjQgLSBjb3JlIDE0MiByMjQ3OSBkZDc5YTYxIC0gSC4yNjQvTVBFRy00IEFWQ2NvZGVjIC0gQ29weWxlZnQgMjAwMy0yMDE0IC0gaHR0cDovL3d3dy52aWRlb2xhbi5vcmcveDI2NC5odG1sIC0gb3B0aW9uczogY2FiYWM9MSByZWY9MyBkZWJsb2NrPTE6MDowIGFuYWx5c2U9MHgzOjB4MTEzIG1lPWhleCBzdWJtZT03IHBzeT0xIHBzeV9yZD0xLjAwOjAuMDAgbWl4ZWRfcmVmPTEgbWVfcmFuZ2U9MTYgY2hyb21hX21lPTEgdHJlbGxpcz0xIDh4OGRjdD0xIGNxbT0wIGRlYWR6b25lPTIxLDExIGZhc3RfcHNraXA9MSBjaHJvbWFfcXBfb2Zmc2V0PS0yIHRocmVhZHM9NjAgbG9va2FoZWFkX3RocmVhZHM9MTAgc2xpY2VkX3RocmVhZHM9MCBucj0wIGRlY2ltYXRlPTEgaW50ZXJsYWNlZD0wIGJsdXJheV9jb21wYXQ9MCBjb25zdHJhaW5lZF9pbnRyYT0wIGJmcmFtZXM9MyBiX3B5cmFtaWQ9MiByZWZzPTMgd2VpZ2h0cD0yIGtleWludD0yNTAga2V5aW50X21pbj0yNSBzY2VuZWN1dD00MCBpbnRyYV9yZWZyZXNoPTAgcmNfbG9va2FoZWFkPTQwIHJjPWNyZiBtYnRyZWU9MSBjcmY9MjMuMCBxY29tcD0wLjYwIHFwbWluPTAgcXBtYXg9NjkgcXBzdGVwPTQgaXBfcmF0aW89MS40MCBhcT0xOjEuMDAAgAAAAFZliIQL8mKAAKvMnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnAAAAAxBmiSWAAAGMAAYkAAAAAlBmjCWAAAGMAAYkAAAAAlBmjiWAAAGMAAYkAAAAAlBmliWAAAGMAAYkAAAAAlBmmCWAAAGMAAYkAAAAAlBmmSWAAAGMAAYkAAAAAlBmpiWAAAGMAAYk';
+    noSleepVideo.src = src;
+    document.body.appendChild(noSleepVideo);
+    noSleepVideo.play().catch(() => {});
+    addLog('📺 Anti-sleep video activo', 'ok');
+  } catch(e) {}
+}
+
+function stopNoSleepVideo() {
+  if (noSleepVideo) {
+    noSleepVideo.pause();
+    noSleepVideo.remove();
+    noSleepVideo = null;
   }
 }
 
 function releaseWakeLock() {
-  if (wakeLock) {
-    wakeLock.release();
-    wakeLock = null;
-  }
+  if (wakeLock) { wakeLock.release(); wakeLock = null; }
+  stopNoSleepVideo();
 }
 
 function getGeoOptions() {
   const mode = elements.inputAccuracy.value;
-  if (mode === 'balanced') {
-    return { enableHighAccuracy: false, timeout: 20000, maximumAge: 5000 };
-  } else if (mode === 'low') {
-    return { enableHighAccuracy: false, timeout: 10000, maximumAge: 10000 };
-  }
+  if (mode === 'balanced') return { enableHighAccuracy: false, timeout: 20000, maximumAge: 5000 };
+  if (mode === 'low') return { enableHighAccuracy: false, timeout: 10000, maximumAge: 10000 };
   return { enableHighAccuracy: true, timeout: 30000, maximumAge: 0 };
 }
 
 async function sendToFirebase(camId, chofer, pos) {
   if (!db || !window.dbSet) return false;
-  
   const { latitude, longitude, accuracy, speed } = pos.coords;
   const kmh = speed ? Math.round(speed * 3.6) : 0;
   const timestamp = Date.now();
-  
   const positionData = {
-    id: camId,
-    chofer: chofer,
-    lat: latitude,
-    lng: longitude,
-    accuracy: Math.round(accuracy),
-    vel: kmh,
-    ts: timestamp,
-    online: true
+    id: camId, chofer, lat: latitude, lng: longitude,
+    accuracy: Math.round(accuracy), vel: kmh, ts: timestamp, online: true
   };
-  
   try {
     await window.dbSet(window.dbRef(db, 'posiciones/' + camId), positionData);
     await window.dbPush(window.dbRef(db, 'historial/' + camId), positionData);
-    
     sendCount++;
     lastSuccessfulSend = new Date();
-    
     const now = new Date();
     const timeStr = `${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}:${String(now.getSeconds()).padStart(2,'0')}`;
     elements.lastSync.innerHTML = `✅ ${timeStr} · Envío #${sendCount}`;
-    
     if (offlineQueue.length === 0) {
       addLog(`📍 #${sendCount} → ${latitude.toFixed(5)}, ${longitude.toFixed(5)} | ${kmh}km/h`, 'ok');
     }
-    
     return true;
   } catch(e) {
     offlineQueue.push(positionData);
@@ -612,10 +582,8 @@ async function sendToFirebase(camId, chofer, pos) {
 async function flushOfflineQueue(camId, chofer) {
   if (offlineQueue.length === 0) return;
   if (!navigator.onLine) return;
-  
   addLog(`📤 Enviando ${offlineQueue.length} pendientes...`, 'ok');
   let successCount = 0;
-  
   for (const pos of [...offlineQueue]) {
     try {
       await window.dbSet(window.dbRef(db, 'posiciones/' + camId), pos);
@@ -623,32 +591,22 @@ async function flushOfflineQueue(camId, chofer) {
       offlineQueue.shift();
       successCount++;
       saveQueue();
-    } catch(e) {
-      break;
-    }
+    } catch(e) { break; }
   }
-  
-  if (successCount > 0) {
-    addLog(`✅ ${successCount} sincronizados`, 'ok');
-  }
+  if (successCount > 0) addLog(`✅ ${successCount} sincronizados`, 'ok');
 }
 
 function updateUI(pos) {
   const { latitude, longitude, accuracy, speed } = pos.coords;
   const kmh = speed ? Math.round(speed * 3.6) : 0;
-  
   elements.valLat.textContent = latitude.toFixed(6);
   elements.valLng.textContent = longitude.toFixed(6);
   elements.valAcc.textContent = Math.round(accuracy);
   elements.valVel.textContent = kmh;
-  
   const pct = Math.max(0, Math.min(100, 100 - (accuracy / 100)));
   elements.accFill.style.width = pct + '%';
   elements.accFill.style.background = accuracy < 20 ? 'var(--accent)' : accuracy < 50 ? 'var(--amber)' : 'var(--red)';
-  
-  let accText = accuracy < 20 ? 'Excelente' : accuracy < 50 ? 'Buena' : 'Baja precisión';
-  elements.accLabel.textContent = accText;
-  
+  elements.accLabel.textContent = accuracy < 20 ? 'Excelente' : accuracy < 50 ? 'Buena' : 'Baja precisión';
   elements.coordsDisplay.innerHTML = `Lat: <span>${latitude.toFixed(6)}</span><br>Lng: <span>${longitude.toFixed(6)}</span><br>Precisión: <span>${Math.round(accuracy)}m</span> | Vel: <span>${kmh} km/h</span>`;
   elements.statusText.textContent = `Rastreando | ${kmh}km/h`;
 }
@@ -662,7 +620,6 @@ function startKeepAlive() {
       elements.lastSync.style.color = 'var(--text3)';
     }
   }, 15000);
-  
   document.addEventListener('visibilitychange', handleVisibilityChange);
 }
 
@@ -673,13 +630,21 @@ function stopKeepAlive() {
 
 function handleVisibilityChange() {
   if (!document.hidden && tracking) {
-    addLog('🔄 App reanudada', 'ok');
-    if (!wakeLock) requestWakeLock();
-    if (lastPos) {
-      const camId = elements.inputCamId.value.trim();
-      const chofer = elements.inputChofer.value.trim();
-      sendToFirebase(camId, chofer, lastPos);
-    }
+    addLog('🔄 App reanudada — forzando GPS...', 'ok');
+    requestWakeLock();
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        lastPos = pos;
+        lastGpsUpdate = Date.now();
+        updateUI(pos);
+        const camId = elements.inputCamId.value.trim();
+        const chofer = elements.inputChofer.value.trim();
+        sendToFirebase(camId, chofer, pos);
+        addLog('📍 Posición forzada al reanudar', 'ok');
+      },
+      (err) => { addLog('⚠️ GPS al reanudar: ' + err.message, 'warn'); },
+      { enableHighAccuracy: true, timeout: 15000, maximumAge: 0 }
+    );
   }
 }
 
@@ -703,7 +668,6 @@ function showPersistentTip() {
 function startTracking() {
   const camId = elements.inputCamId.value.trim();
   const chofer = elements.inputChofer.value.trim();
-  
   if (!camId) { addLog('❌ Ingresá ID de camión', 'warn'); return false; }
   if (!chofer) { addLog('❌ Ingresá nombre del chofer', 'warn'); return false; }
   if (!firebaseOk) { addLog('❌ Firebase no conectado', 'err'); return false; }
@@ -716,75 +680,103 @@ function startTracking() {
   elements.mainBtn.innerHTML = `<svg viewBox="0 0 20 20" fill="none"><rect x="5" y="5" width="10" height="10" rx="2" fill="currentColor"/></svg> Detener rastreo 24/7`;
   elements.statusDot.classList.add('active');
   elements.statusText.textContent = 'Iniciando GPS...';
-  
   saveTrackingState();
   requestWakeLock();
-  
+
   if (db && window.dbSet && window.dbOnDisconnect) {
     const presenceRef = window.dbRef(db, 'status/' + camId);
-    window.dbSet(presenceRef, { id: camId, chofer: chofer, online: true, startTime: Date.now() });
+    window.dbSet(presenceRef, { id: camId, chofer, online: true, startTime: Date.now() });
     window.dbOnDisconnect(presenceRef).set({ online: false, lastSeen: window.dbServerTimestamp() });
   }
-  
+
   const geoOptions = getGeoOptions();
-  
-  watchId = navigator.geolocation.watchPosition(
-    (pos) => {
-      lastPos = pos;
-      updateUI(pos);
-      sendToFirebase(camId, chofer, pos);
-      if (offlineQueue.length > 0 && navigator.onLine) flushOfflineQueue(camId, chofer);
-      retryCount = 0;
-    },
-    (err) => {
-      let msg = err.code === 1 ? 'Permiso GPS denegado' : err.code === 2 ? 'GPS no disponible' : 'Timeout GPS';
-      addLog(`⚠️ ${msg}`, 'err');
-      elements.statusText.textContent = msg;
-      if (tracking && retryCount < 10) {
-        retryCount++;
-        setTimeout(() => {
-          if (tracking && watchId) {
-            navigator.geolocation.getCurrentPosition(() => {}, () => {}, geoOptions);
-          }
-        }, 10000);
-      }
-    },
-    geoOptions
-  );
-  
+
+  function iniciarWatch() {
+    if (watchId) navigator.geolocation.clearWatch(watchId);
+    watchId = navigator.geolocation.watchPosition(
+      (pos) => {
+        lastPos = pos;
+        lastGpsUpdate = Date.now();
+        updateUI(pos);
+        sendToFirebase(camId, chofer, pos);
+        if (offlineQueue.length > 0 && navigator.onLine) flushOfflineQueue(camId, chofer);
+        retryCount = 0;
+      },
+      (err) => {
+        let msg = err.code === 1 ? 'Permiso GPS denegado' : err.code === 2 ? 'GPS no disponible' : 'Timeout GPS';
+        addLog(`⚠️ ${msg} — reintentando...`, 'err');
+        elements.statusText.textContent = msg;
+        if (tracking && retryCount < 20) {
+          retryCount++;
+          setTimeout(() => { if (tracking) iniciarWatch(); }, 5000);
+        }
+      },
+      geoOptions
+    );
+  }
+  iniciarWatch();
+
+  if (forceGpsTimer) clearInterval(forceGpsTimer);
+  forceGpsTimer = setInterval(() => {
+    if (!tracking) return;
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const esNueva = !lastGpsUpdate || (Date.now() - lastGpsUpdate) > 10000;
+        if (esNueva) {
+          lastPos = pos;
+          lastGpsUpdate = Date.now();
+          updateUI(pos);
+          sendToFirebase(camId, chofer, pos);
+          addLog(`🔁 GPS forzado → ${pos.coords.latitude.toFixed(5)}`, 'ok');
+        }
+      },
+      () => {},
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
+  }, 15000);
+
+  if (watchdogTimer) clearInterval(watchdogTimer);
+  watchdogTimer = setInterval(() => {
+    if (!tracking) return;
+    const silencio = lastGpsUpdate ? (Date.now() - lastGpsUpdate) : Infinity;
+    if (silencio > 90000) {
+      addLog('🐕 Watchdog: GPS muerto 90s — reiniciando...', 'warn');
+      iniciarWatch();
+      requestWakeLock();
+    } else if (silencio > 60000) {
+      addLog('⏱️ Sin GPS por ' + Math.round(silencio/1000) + 's', 'warn');
+    }
+  }, 30000);
+
   const interval = parseInt(elements.inputInterval.value);
   sendTimer = setInterval(() => {
     if (lastPos && tracking) sendToFirebase(camId, chofer, lastPos);
   }, interval);
-  
+
   startKeepAlive();
   addLog(`🚛 Rastreo 24/7 | ${camId} - ${chofer} | cada ${interval/1000}s`, 'ok');
   setTimeout(showPersistentTip, 2000);
-  
   return true;
 }
 
 function stopTracking() {
   tracking = false;
-  
   if (watchId) { navigator.geolocation.clearWatch(watchId); watchId = null; }
   if (sendTimer) { clearInterval(sendTimer); sendTimer = null; }
-  
+  if (forceGpsTimer) { clearInterval(forceGpsTimer); forceGpsTimer = null; }
+  if (watchdogTimer) { clearInterval(watchdogTimer); watchdogTimer = null; }
   releaseWakeLock();
   stopKeepAlive();
-  
   elements.mainBtn.className = 'btn-start start';
   elements.mainBtn.innerHTML = `<svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="10" r="3" fill="currentColor"/><circle cx="10" cy="10" r="6" stroke="currentColor" stroke-width="1" stroke-dasharray="2 2" opacity=".5"/></svg> Iniciar rastreo 24/7`;
   elements.statusDot.classList.remove('active');
   elements.statusText.textContent = 'Inactivo';
   elements.configCard.style.opacity = '1';
   elements.configCard.style.pointerEvents = 'auto';
-  
   const camId = elements.inputCamId.value.trim();
   if (db && window.dbSet && camId) {
     window.dbSet(window.dbRef(db, 'status/' + camId), { online: false, lastSeen: Date.now() });
   }
-  
   saveTrackingState();
   addLog('🛑 Rastreo detenido', 'warn');
 }
@@ -800,11 +792,9 @@ function loadSavedState() {
   const savedChofer = localStorage.getItem('tracker_chofer');
   const savedInterval = localStorage.getItem('tracker_interval');
   const savedQueue = localStorage.getItem('tracker_queue');
-  
   if (savedCamId) elements.inputCamId.value = savedCamId;
   if (savedChofer) elements.inputChofer.value = savedChofer;
   if (savedInterval) elements.inputInterval.value = savedInterval;
-  
   if (savedQueue) {
     try {
       offlineQueue = JSON.parse(savedQueue);
@@ -812,7 +802,6 @@ function loadSavedState() {
       if (offlineQueue.length) addLog(`📦 ${offlineQueue.length} posiciones pendientes`, 'warn');
     } catch(e) {}
   }
-  
   if (wasTracking && savedCamId && savedChofer) {
     addLog('🔄 Reanudando rastreo automático...', 'ok');
     setTimeout(() => startTracking(), 1000);
@@ -836,14 +825,15 @@ initFirebase();
 loadSavedState();
 addLog('Tracker 24/7 listo', 'ok');
 
-// ── SERVICE WORKER — rastreo en segundo plano ──
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/sw.js').then(reg => {
+  const swPath = location.pathname.includes('/pulso-py/')
+    ? '/pulso-py/sw.js'
+    : '/sw.js';
+  navigator.serviceWorker.register(swPath).then(reg => {
     addLog('SW activo — segundo plano habilitado', 'ok');
-    // Escuchar mensajes del SW
     navigator.serviceWorker.addEventListener('message', event => {
       if (event.data?.type === 'FLUSH_QUEUE') {
-        const camId  = elements.inputCamId.value.trim();
+        const camId = elements.inputCamId.value.trim();
         const chofer = elements.inputChofer.value.trim();
         if (camId && chofer) flushOfflineQueue(camId, chofer);
       }
@@ -851,24 +841,26 @@ if ('serviceWorker' in navigator) {
   }).catch(e => addLog('SW no disponible: ' + e.message, 'warn'));
 }
 
-// ── KEEP ALIVE al SW cada 20s para evitar que se duerma ──
 setInterval(() => {
   if (navigator.serviceWorker?.controller) {
     navigator.serviceWorker.controller.postMessage({ type: 'KEEP_ALIVE' });
   }
-}, 20000);
+}, 15000);
 
-// ── BACKGROUND SYNC — registrar sync cuando vuelve la red ──
 window.addEventListener('online', async () => {
-  addLog('Red recuperada', 'ok');
-  const camId  = elements.inputCamId.value.trim();
+  const camId = elements.inputCamId.value.trim();
   const chofer = elements.inputChofer.value.trim();
   if (tracking && camId && chofer) flushOfflineQueue(camId, chofer);
-  // Registrar background sync si está disponible
   if ('serviceWorker' in navigator && 'sync' in ServiceWorkerRegistration.prototype) {
     const reg = await navigator.serviceWorker.ready;
     reg.sync.register('sync-positions').catch(() => {});
   }
+});
+
+['touchstart', 'touchend', 'click'].forEach(ev => {
+  document.addEventListener(ev, () => {
+    if (tracking && !wakeLock) requestWakeLock();
+  }, { passive: true });
 });
 </script>
 </body>
